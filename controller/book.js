@@ -16,9 +16,7 @@ exports.getBooksById = (req, res, next, id) => {
 // GET ALL BOOKS
 
 exports.getBooks = (req, res) => {
-  const { id } = req.body;
-
-  Books.findById(id).exec((err, books) => {
+  Books.find().exec((err, books) => {
     if (err || !books) {
       return res.status(400).json({
         error: "No Books Found",
