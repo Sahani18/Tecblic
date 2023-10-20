@@ -26,6 +26,6 @@ app.use(bodyParser.json());
 //port
 const port = process.env.PORT || 8000;
 
-app.get("/api", bookRoute);
+app.use("/api", bookRoute);
 
-app.listen(port, () => console.log("Server is up & running"));
+app.listen(port, () => console.log(`Server is up & running at ${port}`));
